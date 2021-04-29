@@ -65,7 +65,14 @@ const Header = ({ navBarTitle, fullWidth }) => {
         <div className="flex items-center">
           <Link href="/">
             <div className="h-6">
-              <svg
+            <Image
+                  alt={BLOG.author}
+                  width={24}
+                  height={24}
+                  src="/avatar.svg"
+                  className="rounded-full"
+                />
+              {/* <svg
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -91,7 +98,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
                     <stop offset="1" stopColor="#E9E9E9" stopOpacity="0" />
                   </radialGradient>
                 </defs>
-              </svg>
+              </svg> */}
             </div>
           </Link>
           {navBarTitle ? (
