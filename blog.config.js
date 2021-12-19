@@ -2,9 +2,9 @@ const BLOG = {
   title: "link-blog",
   author: "link",
   email: "1292077619@qq.com",
-  link: "https://link-blog.vercel.app/",
+  link: "https://link-blog.vercel.app",
   description: "真不戳",
-  lang: "zh-CN", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
+  lang: "zn-CN", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   appearance: "auto", // ['light', 'dark', 'auto'],
   font: "sans-serif", // ['sans-serif', 'serif']
   lightBackground: "#ffffff", // use hex value, don't forget '#' e.g #fffefc
