@@ -77,7 +77,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
                 {/*   src={Logo} */}
                 {/*   className="rounded-full" */}
                 {/* /> */}
-                <img src="/avatar.svg" width="24" height="24" />
+                <img src="/static/avatar.svg" width="24" height="24" />
                 {/* <svg */}
                 {/*   width="24" */}
                 {/*   height="24" */}
