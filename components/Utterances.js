@@ -6,8 +6,8 @@ const Utterances = ({ issueTerm, layout }) => {
       BLOG.appearance === 'auto'
         ? 'preferred-color-scheme'
         : BLOG.appearance === 'light'
-        ? 'github-light'
-        : 'github-dark'
+          ? 'github-light'
+          : 'github-dark'
     const script = document.createElement('script')
     const anchor = document.getElementById('comments')
     script.setAttribute('src', 'https://utteranc.es/client.js')
@@ -17,6 +17,9 @@ const Utterances = ({ issueTerm, layout }) => {
     script.setAttribute('issue-term', issueTerm)
     script.setAttribute('theme', theme)
     anchor.appendChild(script)
+    return () => {
+      anchor.innerHTML = ''
+    }
   })
   return (
     <>
