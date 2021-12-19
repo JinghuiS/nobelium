@@ -2,9 +2,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import BLOG from "@/blog.config";
 import { useLocale } from "@/lib/locale";
-import Logo from "@/public/avatar.svg";
 
-import Image from "next/image";
 const NavBar = () => {
   const locale = useLocale();
   const links = [
@@ -72,14 +70,14 @@ const Header = ({ navBarTitle, fullWidth }) => {
           <Link href="/">
             <a aria-label={BLOG.title}>
               <div className="h-6">
-                <Image
-                  alt={BLOG.author}
-                  width={24}
-                  height={24}
-                  src={Logo}
-                  className="rounded-full"
-                />
-                {/* <img src={avatar} width="24" height="24" /> */}
+                {/* <Image */}
+                {/*   alt={BLOG.author} */}
+                {/*   width={24} */}
+                {/*   height={24} */}
+                {/*   src={Logo} */}
+                {/*   className="rounded-full" */}
+                {/* /> */}
+                <img src="/avatar.svg" width="24" height="24" />
                 {/* <svg */}
                 {/*   width="24" */}
                 {/*   height="24" */}
