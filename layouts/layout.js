@@ -1,14 +1,20 @@
 import Image from 'next/image'
 import Container from '@/components/Container'
 import TagItem from '@/components/TagItem'
-import { NotionRenderer, Equation, Code, Collection, CollectionRow } from 'react-notion-x'
+import {
+  NotionRenderer,
+  Equation,
+  Code,
+  Collection,
+  CollectionRow
+} from 'react-notion-x'
 import BLOG from '@/blog.config'
 import formatDate from '@/lib/formatDate'
 import { useLocale } from '@/lib/locale'
 import { useRouter } from 'next/router'
 import Comments from '@/components/Comments'
 
-const mapPageUrl = id => {
+const mapPageUrl = (id) => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
 }
 
@@ -28,6 +34,19 @@ const Layout = ({
       description={frontMatter.summary}
       // date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"
+      indexHeader={
+        <header className="w-full max-h-lg relative hover:scale-105 hover:shadow-2xl duration-200 mb-10 transform mx-auto max-w-5xl md:flex-shrink-0 overflow-y-hidden animate__fadeIn animate__animated">
+          {/* 封面图 */}
+          {frontMatter.page_cover && frontMatter.page_cover.length > 1 && (
+            <img
+              className="bg-center object-cover w-full max-h-lg "
+              src={frontMatter.page_cover}
+              alt={frontMatter.title}
+
+            />
+          )}
+        </header>
+      }
       fullWidth={fullWidth}
     >
       <article>
@@ -38,13 +57,13 @@ const Layout = ({
           <nav className="flex mt-7 items-start text-gray-500 dark:text-gray-400">
             <div className="flex mb-4">
               <a href={BLOG.socialLink || '#'} className="flex">
-                <Image
+                {/* <Image
                   alt={BLOG.author}
                   width={24}
                   height={24}
                   src={`https://gravatar.com/avatar/${emailHash}`}
                   className="rounded-full"
-                />
+                /> */}
                 <p className="ml-2 md:block">{BLOG.author}</p>
               </a>
               <span className="block">&nbsp;/&nbsp;</span>
@@ -57,7 +76,7 @@ const Layout = ({
             </div>
             {frontMatter.tags && (
               <div className="flex flex-nowrap max-w-full overflow-x-auto article-tags">
-                {frontMatter.tags.map(tag => (
+                {frontMatter.tags.map((tag) => (
                   <TagItem key={tag} tag={tag} />
                 ))}
               </div>

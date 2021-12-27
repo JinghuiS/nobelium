@@ -5,7 +5,7 @@ import Head from 'next/head'
 import PropTypes from 'prop-types'
 // import BlogPost from './BlogPost'
 
-const Container = ({ children, layout, fullWidth, ...customMeta }) => {
+const Container = ({ children, layout, fullWidth, indexHeader, ...customMeta }) => {
   const url = BLOG.path.length ? `${BLOG.link}/${BLOG.path}` : BLOG.link
   const meta = {
     title: BLOG.title,
@@ -71,6 +71,7 @@ const Container = ({ children, layout, fullWidth, ...customMeta }) => {
           navBarTitle={layout === 'blog' ? meta.title : null}
           fullWidth={fullWidth}
         />
+        {indexHeader && indexHeader}
         <main
           className={`m-auto flex-grow w-full transition-all ${
             !fullWidth ? 'max-w-2xl px-4' : 'px-4 md:px-24'
