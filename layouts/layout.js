@@ -34,14 +34,13 @@ const Layout = ({
       // date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"
       indexHeader={
-        <header className="w-full max-h-lg relative hover:scale-105 hover:shadow-2xl duration-200 mb-10 transform mx-auto max-w-5xl md:flex-shrink-0 overflow-y-hidden animate__fadeIn animate__animated">
+        <header className="md:px-10 w-full mx-auto md:h-60 h-40 mb-20 ">
           {/* 封面图 */}
           {frontMatter.page_cover && frontMatter.page_cover.length > 1 && (
             <img
-              className="bg-center object-cover w-full max-h-lg "
+              className="mx-auto md:h-60 h-40   w-full object-cover md:rounded-2xl md:shadow-xl "
               src={frontMatter.page_cover}
               alt={frontMatter.title}
-
             />
           )}
         </header>

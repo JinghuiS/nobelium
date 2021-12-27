@@ -4,20 +4,20 @@ import formatDate from '@/lib/formatDate'
 import Image from 'next/image'
 const BlogPost = ({ post }) => {
   return (
-    <div>
+    <div className='group hover:bg-gray-300 hover:bg-opacity-25 duration-200 transform' >
       <Link href={`${BLOG.path}/${post.slug}`}>
-        <a>
+        <a className=' group-hover:bg-gray-300 group-hover:bg-opacity-25 '>
           {post?.page_cover && (
             <div className=" relative md:h-60 h-40 w-full  duration-200 cursor-pointer transform ">
               <Image
-                className="object-cover md:h-60 h-40 w-full rounded-2xl shadow-xl hover:scale-105 transform duration-500"
+                className="object-cover md:h-60 h-40 w-full rounded-2xl  hover:-translate-y-1 hover:scale-105 transform duration-500 shadow-xl"
                 src={post?.page_cover}
                 alt={post.title}
                 layout="fill"
               />
             </div>
           )}
-          <article key={post.id} className="mb-6 md:mb-8 px-2 mt-2">
+          <article key={post.id} className="mb-6 md:mb-8 px-2 mt-2 ">
             <header className="flex flex-col justify-between md:flex-row md:items-baseline">
               <h2 className="text-lg md:text-xl font-medium mb-2 cursor-pointer text-black dark:text-gray-100 truncate">
                 {post.title}
